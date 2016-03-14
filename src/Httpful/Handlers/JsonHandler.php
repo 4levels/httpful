@@ -8,11 +8,11 @@ namespace Httpful\Handlers;
 
 class JsonHandler extends MimeHandlerAdapter
 {
-    private $decode_as_array = false;
+    private $decode_as_array = true;
 
     public function init(array $args)
     {
-        $this->decode_as_array = !!(array_key_exists('decode_as_array', $args) ? $args['decode_as_array'] : false);
+        $this->decode_as_array = !!(array_key_exists('decode_as_array', $args) ? $args['decode_as_array'] : true);
     }
 
     /**
